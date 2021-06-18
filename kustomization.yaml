@@ -7,3 +7,4 @@ secretGenerator:
 resources:
   - mysql-deployment.txt
   - wordpress.txt
+  - hpa-wordpress.txt
