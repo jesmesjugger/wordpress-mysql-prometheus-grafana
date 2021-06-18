@@ -48,6 +48,8 @@ spec:
       containers:
       - image: wordpress:4.8-apache
         name: wordpress
+        securityContext:
+          allowPrivilegeEscalation: false
         env:
         - name: WORDPRESS_DB_HOST
           value: wordpress-mysql 
@@ -60,8 +62,7 @@ spec:
           httpGet:
             path: / 
             port: 80
-          initialDelaySeconds: 3
-          failureThreshold: 1
+          initialDelaySeconds: 15
           periodSeconds: 3
         readinessProbe:
           httpGet:
